@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    background: #000;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+}
+
+
+/* =========================
+   BARRE DU HAUT
+========================= */
+
+.topbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 16px;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 100;
+}
+
+.logo {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #b9b9b9;
+}
+
+
+/* =========================
+   FEED
+========================= */
+
+#feed {
+    width: 100%;
+    height: 100vh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scroll-snap-type: y mandatory;
+
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+#feed::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================
+   PAGE VIDEO
+========================= */
+
+.video-page {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+    background: #050505;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.video {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    background: #000;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   INFORMATIONS
+========================= */
+
+.info {
+    position: absolute;
+
+    left: 16px;
+    bottom: 35px;
+
+    max-width: 70%;
+
+    z-index: 10;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.info h2 {
+    font-size: 23px;
+
+    margin-bottom: 7px;
+}
+
+.info p {
+    font-size: 14px;
+
+    color: #ddd;
+}
+
+
+/* =========================
+   BOUTONS
+========================= */
+
+.actions {
+    position: absolute;
+
+    right: 14px;
+    bottom: 85px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    z-index: 20;
+}
+
+.actions button {
+    width: 54px;
+    height: 54px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(20, 20, 20, 0.75);
+
+    color: white;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(5px);
+}
+
+.actions button:active {
+    transform: scale(0.9);
+}
+
+.like span {
+    display: block;
+
+    font-size: 11px;
+
+    margin-top: -2px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .topbar {
+        height: 55px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .subtitle {
+        font-size: 11px;
+    }
+
+    .info {
+        bottom: 25px;
+        left: 13px;
+    }
+
+    .info h2 {
+        font-size: 20px;
+    }
+
+    .info p {
+        font-size: 13px;
+    }
+
+    .actions {
+        right: 10px;
+        bottom: 80px;
+    }
+
+    .actions button {
+        width: 50px;
+        height: 50px;
+    }
+}
